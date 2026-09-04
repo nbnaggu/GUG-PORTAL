@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Gurugram University | Student Notes Portal
+    </title>
+
+    <meta
+        name="description"
+        content="Gurugram University Student Notes Portal"
+    >
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            background: #063b7a;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .university-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            color: #063b7a;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo-text h2 {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: #d7e7ff;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd166;
+        }
+
+        .login-nav-btn {
+            background: #f5b700;
+            color: #172033 !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .login-nav-btn:hover {
+            background: #ffca2c;
+        }
+
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 570px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #063b7a,
+                    #0b5cad
+                );
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 70px 25px;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #ffd166;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 650px;
+            color: #e1ecfa;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            background: #f5b700;
+            color: #172033;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            background: #ffca2c;
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 25px;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+            color: #063b7a;
+        }
+
+
+        /* =========================
+           HERO CARD
+        ========================= */
+
+        .hero-card {
+            background: white;
+            color: #172033;
+            border-radius: 20px;
+            padding: 30px;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .hero-card-top h3 {
+            font-size: 20px;
+        }
+
+        .online-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .mini-stat {
+            background: #f0f5fb;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mini-stat strong {
+            color: #063b7a;
+            font-size: 22px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+            color: #063b7a;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #65748b;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 28px 22px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.07);
+
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .feature-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: #e7f0fb;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .feature-card h3 {
+            color: #063b7a;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #65748b;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SEMESTERS
+        ========================= */
+
+        .semester-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .semester-card {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+
+            border: 1px solid #e1e8f0;
+
+            transition: 0.3s;
+        }
+
+        .semester-card:hover {
+            border-color: #0b5cad;
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .semester-number {
+            width: 45px;
+            height: 45px;
+
+            background: #063b7a;
+            color: white;
+
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .semester-card h3 {
+            margin-bottom: 8px;
+            color: #172033;
+        }
+
+        .semester-card p {
+            color: #65748b;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           XP SECTION
+        ========================= */
+
+        .xp-section {
+            background: #063b7a;
+            color: white;
+        }
+
+        .xp-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 25px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .xp-content h2 {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .xp-content p {
+            color: #d7e7ff;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .xp-list {
+            list-style: none;
+        }
+
+        .xp-list li {
+            margin-bottom: 14px;
+            font-size: 16px;
+        }
+
+        .xp-board {
+            background: white;
+            color: #172033;
+            padding: 30px;
+            border-radius: 18px;
+        }
+
+        .xp-board h3 {
+            margin-bottom: 20px;
+            color: #063b7a;
+        }
+
+        .xp-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 13px 0;
+            border-bottom: 1px solid #e8edf3;
+        }
+
+        .xp-rank {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+
+            background: #eef3f9;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: bold;
+        }
+
+        .xp-user {
+            flex: 1;
+        }
+
+        .xp-user small {
+            display: block;
+            color: #7a8799;
+            margin-top: 3px;
+        }
+
+        .xp-points {
+            color: #f0a900;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           LOGIN MODAL
+        ========================= */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.65);
+
+            z-index: 2000;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 430px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            position: relative;
+
+            animation: popup 0.25s ease;
+        }
+
+        @keyframes popup {
+
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 18px;
+            top: 15px;
+
+            border: none;
+            background: transparent;
+
+            font-size: 25px;
+            cursor: pointer;
+            color: #65748b;
+        }
+
+        .login-box h2 {
+            color: #063b7a;
+            margin-bottom: 8px;
+        }
+
+        .login-box > p {
+            color: #65748b;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 13px;
+
+            border: 1px solid #ccd5e0;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+        .input-group input:focus {
+            border-color: #0b5cad;
+        }
+
+        .login-submit {
+            width: 100%;
+
+            padding: 13px;
+
+            background: #063b7a;
+            color: white;
+
+            border: none;
+            border-radius: 9px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .login-submit:hover {
+            background: #0b5cad;
+        }
+
+        .login-message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #16a34a;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #071d38;
+            color: white;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 25px;
+
+            display: grid;
+            grid-template-columns:
+                2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand h2 {
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: #aebdd0;
+            line-height: 1.6;
+            max-width: 450px;
+            font-size: 14px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #aebdd0;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #263a52;
+            text-align: center;
+            padding: 18px;
+            color: #aebdd0;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .semester-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .xp-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .semester-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                padding: 12px 18px;
+            }
+
+            .logo-text h2 {
+                font-size: 16px;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo-area">
+
+            <div class="university-logo">
+                GU
+            </div>
+
+            <div class="logo-text">
+
+                <h2>Gurugram University</h2>
+
+                <p>Student Notes Portal</p>
+
+            </div>
+
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#features">
+                    Features
+                </a>
+            </li>
+
+            <li>
+                <a href="#subjects">
+                    Subjects
+                </a>
+            </li>
+
+            <li>
+                <a href="#xp">
+                    XP System
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#"
+                    class="login-nav-btn"
+                    onclick="openLogin(); return false;"
+                >
+                    Student Login
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div
+            class="menu-btn"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-container">
+
+
+        <div class="hero-content">
+
+            <h1>
+
+                Learn.
+                <span>Share.</span>
+                Earn XP.
+
+            </h1>
+
+
+            <p>
+
+                Welcome to the Gurugram University Student
+                Notes Portal. Upload your notes, access study
+                material and earn XP points by helping your
+                fellow students.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="openLogin()"
+                >
+                    Get Started →
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="document.getElementById('features').scrollIntoView()"
+                >
+                    Explore Portal
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-card">
+
+            <div class="hero-card-top">
+
+                <h3>
+                    📊 Student Portal
+                </h3>
+
+                <div class="online-dot"></div>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+                <span>
+                    📚 Available Notes
+                </span>
+
+                <strong>
+                    1,250+
+                </strong>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+                <span>
+                    👨‍🎓 Active Students
+                </span>
+
+                <strong>
+                    850+
+                </strong>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+                <span>
+                    ⭐ XP Earned
+                </span>
+
+                <strong>
+                    25K+
+                </strong>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+                <span>
+                    📤 Notes Shared
+                </span>
+
+                <strong>
+                    3,400+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section
+    class="section"
+    id="features"
+>
+
+    <div class="section-heading">
+
+        <h2>
+            Everything You Need
+        </h2>
+
+        <p>
+            One portal for your complete academic journey.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔐
+            </div>
+
+            <h3>
+                Student Login
+            </h3>
+
+            <p>
+                Secure student account where you can
+                manage your profile, notes and XP.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📤
+            </div>
+
+            <h3>
+                Upload Notes
+            </h3>
+
+            <p>
+                Share PDF and study material with
+                other students easily.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ⭐
+            </div>
+
+            <h3>
+                Earn XP
+            </h3>
+
+            <p>
+                Earn experience points whenever you
+                contribute useful notes.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🏆
+            </div>
+
+            <h3>
+                Leaderboard
+            </h3>
+
+            <p>
+                Compete with other students and
+                become the top contributor.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SUBJECTS
+========================= -->
+
+<section
+    class="section"
+    id="subjects"
+>
+
+    <div class="section-heading">
+
+        <h2>
+            Explore Subjects
+        </h2>
+
+        <p>
+            Find notes according to your semester.
+        </p>
+
+    </div>
+
+
+    <div class="semester-grid">
+
+
+        <div class="semester-card">
+
+            <div class="semester-number">
+                01
+            </div>
+
+            <h3>
+                Semester 1
+            </h3>
+
+            <p>
+                Mathematics, Physics,
+                Programming & Engineering
+            </p>
+
+        </div>
+
+
+        <div class="semester-card">
+
+            <div class="semester-number">
+                02
+            </div>
+
+            <h3>
+                Semester 2
+            </h3>
+
+            <p>
+                Mathematics, Chemistry,
+                Electrical & Programming
+            </p>
+
+        </div>
+
+
+        <div class="semester-card">
+
+            <div class="semester-number">
+                03
+            </div>
+
+            <h3>
+                Semester 3
+            </h3>
+
+            <p>
+                Data Structures, DBMS,
+                Computer Organization
+            </p>
+
+        </div>
+
+
+        <div class="semester-card">
+
+            <div class="semester-number">
+                04
+            </div>
+
+            <h3>
+                Semester 4
+            </h3>
+
+            <p>
+                Operating System,
+                Networks & OOP
+            </p>
+
+        </div>
+
+
+        <div class="semester-card">
+
+            <div class="semester-number">
+                05
+            </div>
+
+            <h3>
+                Semester 5
+            </h3>
+
+            <p>
+                Web Development,
+                Software Engineering
+            </p>
+
+        </div>
+
+
+        <div class="semester-card">
+
+            <div class="semester-number">
+                06
+            </div>
+
+            <h3>
+                Semester 6
+            </h3>
+
+            <p>
+                AI, Machine Learning,
+                Cloud Computing
+            </p>
+
+        </div>
+
+
+        <div class="semester-card">
+
+            <div class="semester-number">
+                07
+            </div>
+
+            <h3>
+                Semester 7
+            </h3>
+
+            <p>
+                Advanced Technologies,
+                Elective Subjects
+            </p>
+
+        </div>
+
+
+        <div class="semester-card">
+
+            <div class="semester-number">
+                08
+            </div>
+
+            <h3>
+                Semester 8
+            </h3>
+
+            <p>
+                Major Project,
+                Internship & Electives
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     XP SYSTEM
+========================= -->
+
+<section
+    class="xp-section"
+    id="xp"
+>
+
+    <div class="xp-container">
+
+
+        <div class="xp-content">
+
+            <h2>
+                Earn XP While Helping Others
+            </h2>
+
+            <p>
+                Make the portal better for everyone.
+                Upload useful study material and
+                earn XP points.
+            </p>
+
+
+            <ul class="xp-list">
+
+                <li>
+                    📤 Upload Notes — <strong>+50 XP</strong>
+                </li>
+
+                <li>
+                    📚 Share Useful Material — <strong>+30 XP</strong>
+                </li>
+
+                <li>
+                    🔥 Daily Login — <strong>+10 XP</strong>
+                </li>
+
+                <li>
+                    🏆 Reach Top 10 — <strong>Bonus XP</strong>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="xp-board">
+
+            <h3>
+                🏆 Top Contributors
+            </h3>
+
+
+            <div class="xp-item">
+
+                <div class="xp-rank">
+                    1
+                </div>
+
+                <div class="xp-user">
+
+                    <strong>
+                        Student A
+                    </strong>
+
+                    <small>
+                        B.Tech CSE
+                    </small>
+
+                </div>
+
+                <div class="xp-points">
+                    1250 XP
+                </div>
+
+            </div>
+
+
+            <div class="xp-item">
+
+                <div class="xp-rank">
+                    2
+                </div>
+
+                <div class="xp-user">
+
+                    <strong>
+                        Student B
+                    </strong>
+
+                    <small>
+                        B.Tech CSE
+                    </small>
+
+                </div>
+
+                <div class="xp-points">
+                    980 XP
+                </div>
+
+            </div>
+
+
+            <div class="xp-item">
+
+                <div class="xp-rank">
+                    3
+                </div>
+
+                <div class="xp-user">
+
+                    <strong>
+                        Student C
+                    </strong>
+
+                    <small>
+                        B.Tech CSE
+                    </small>
+
+                </div>
+
+                <div class="xp-points">
+                    850 XP
+                </div>
+
+            </div>
+
+
+            <div class="xp-item">
+
+                <div class="xp-rank">
+                    4
+                </div>
+
+                <div class="xp-user">
+
+                    <strong>
+                        Student D
+                    </strong>
+
+                    <small>
+                        B.Tech CSE
+                    </small>
+
+                </div>
+
+                <div class="xp-points">
+                    720 XP
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     LOGIN MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="loginModal"
+>
+
+    <div class="login-box">
+
+
+        <button
+            class="close-btn"
+            onclick="closeLogin()"
+        >
+            ×
+        </button>
+
+
+        <h2>
+            Student Login
+        </h2>
+
+        <p>
+            Login to access your Notes Portal.
+        </p>
+
+
+        <div class="input-group">
+
+            <label>
+                University Roll Number
+            </label>
+
+            <input
+                type="text"
+                id="rollNumber"
+                placeholder="Enter your roll number"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
+
+        </div>
+
+
+        <button
+            class="login-submit"
+            onclick="loginStudent()"
+        >
+            Login
+        </button>
+
+
+        <div
+            class="login-message"
+            id="loginMessage"
+        ></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                🎓 Gurugram University
+            </h2>
+
+            <p>
+                Student Notes Portal designed to make
+                academic resources easier to share,
+                discover and access.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Portal
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#subjects">
+                Subjects
+            </a>
+
+            <a href="#xp">
+                XP System
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Student
+            </h3>
+
+            <a
+                href="#"
+                onclick="openLogin(); return false;"
+            >
+                Login
+            </a>
+
+            <a href="#">
+                Upload Notes
+            </a>
+
+            <a href="#">
+                Leaderboard
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Gurugram University Notes Portal.
+        Student Project.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+    // =========================
+    // OPEN LOGIN
+    // =========================
+
+    function openLogin() {
+
+        document
+            .getElementById("loginModal")
+            .classList
+            .add("active");
+
+    }
+
+
+    // =========================
+    // CLOSE LOGIN
+    // =========================
+
+    function closeLogin() {
+
+        document
+            .getElementById("loginModal")
+            .classList
+            .remove("active");
+
+    }
+
+
+    // =========================
+    // LOGIN
+    // =========================
+
+    function loginStudent() {
+
+        const roll =
+            document
+            .getElementById("rollNumber")
+            .value
+            .trim();
+
+        const email =
+            document
+            .getElementById("email")
+            .value
+            .trim();
+
+        const password =
+            document
+            .getElementById("password")
+            .value
+            .trim();
+
+        const message =
+            document
+            .getElementById("loginMessage");
+
+
+        if (
+            roll === "" ||
+            email === "" ||
+            password === ""
+        ) {
+
+            message.style.color = "#dc2626";
+
+            message.innerText =
+                "Please fill all fields.";
+
+            return;
+
+        }
+
+
+        message.style.color = "#16a34a";
+
+        message.innerText =
+            "Login successful! Dashboard coming next...";
+
+
+        /*
+            NOTE:
+
+            Abhi ye frontend login hai.
+
+            Real login ke liye next part me:
+
+            Node.js
+            Express
+            MongoDB
+            bcrypt
+            JWT
+
+            use karenge.
+        */
+
+    }
+
+
+    // =========================
+    // MOBILE MENU
+    // =========================
+
+    function toggleMenu() {
+
+        const nav =
+            document.querySelector(".nav-links");
+
+        if (
+            nav.style.display === "flex"
+        ) {
+
+            nav.style.display = "none";
+
+        } else {
+
+            nav.style.display = "flex";
+
+            nav.style.flexDirection = "column";
+
+            nav.style.position = "absolute";
+
+            nav.style.top = "70px";
+
+            nav.style.right = "15px";
+
+            nav.style.background = "#063b7a";
+
+            nav.style.padding = "20px";
+
+            nav.style.borderRadius = "10px";
+
+        }
+
+    }
+
+
+    // =========================
+    // CLOSE MODAL OUTSIDE
+    // =========================
+
+    document
+        .getElementById("loginModal")
+        .addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    event.target === this
+                ) {
+
+                    closeLogin();
+
+                }
+
+            }
+        );
+
+
+</script>
+
+
+</body>
+
+</html>
