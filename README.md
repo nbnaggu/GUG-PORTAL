@@ -1,1 +1,1 @@
-Sahre Notes Earn XP
+Share Notes Earn XP
